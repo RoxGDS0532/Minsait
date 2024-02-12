@@ -1,0 +1,51 @@
+<app-navigation></app-navigation>
+	<div class="container" >
+    
+    <div class="container">
+        <div class="d-flex justify-content-end mt-3">
+            <button class="btn btn-primary" routerLink="/add">Agregar</button>
+
+          </div>
+      <h2>Tabla de actividades</h2>
+      <br>
+      <div class="container" >
+        <table class="table table-striped">
+          <thead >
+            <tr >
+              <th>Actividad</th>
+              <th>Descripción</th>
+              <th>Encargado</th>
+              <th>Participantes</th>
+              <th>Estatus</th>
+              <th>Fecha de inicio</th>
+              <th>Fecha de fin</th>
+              <th></th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor ="let item of act">
+             <td >{{item.Nombre_Actividad}}</td>
+             <td>{{item.Descripcion}}</td>
+              <td>{{item.Encargado}}</td>
+              <td>{{item.Participante}}</td>
+              <td>{{item.Estatus}}</td>
+              <td>{{item.Fecha_de_inicio | date: 'yyyy-MM-dd'}}</td>
+              <td>{{item.Fecha_de_fin | date: 'yyyy-MM-dd'}}</td>
+              <td>
+                <a [routerLink]="['/edit', item.idActividad]" (click)="editact(item.idActividad)" type="button" class="btn btn-primary">Modificar</a>
+                 </td>
+                 <td><button class="btn btn-danger " (click)="cancelar(item.idActividad)">Cancelar</button></td>
+
+            </tr>
+            <!-- Agrega más filas según necesites -->
+          </tbody>
+        </table>
+      </div>
+    
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    </div>
+    <div class="d-flex justify-content-end mt-3">
+      
+    </div>
+	</div>
