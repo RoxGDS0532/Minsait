@@ -1,51 +1,90 @@
 <app-navigation></app-navigation>
-	<div class="container" >
+<div class="container mt-5">
+  <h2 class="mb-4">Formulario Curriculum</h2>
+  <form action="guardar_curriculum.php" method="post" enctype="multipart/form-data">
+
+    <fieldset>
+      <legend>Datos Personales</legend>
+      <div class="form-row">
+          <div class="form-group col-md-6">
+              <label for="Nombre">Nombre</label>
+              <input type="text" id="Nombre" name="Nombre" class="form-control" required>
+              <label for="Nombre">Numero Telefonico</label>
+              <input type="text" id="Telefono" name="Telefono" class="form-control" required>
+              <label for="Nombre">Liceciatura o Ingenieria(Nivel)</label>
+              <input type="text" id="Liceciatura" name="Liceciatura" class="form-control" required>
+              <div class="form-group">
+                <label for="Apellidos">Descripcion Personal</label>
+                <textarea id="DescripcionP" name="DescripcionP" class="form-control" rows="4"></textarea>
+            </div>
+            
+          </div>
+          
+
+
+          <div class="form-group col-md-6">
+            <form action="/ruta/del/controlador" method="post" enctype="multipart/form-data">
+              <div class="mb-3">
+                <label for="archivoWord" class="form-label">Imagen</label>
+                <input type="file" class="form-control" id="archivoWord" name="archivoWord" accept=".doc, .docx">
+              </div>
+            </form>
+              <label for="Apellidos">Apellidos</label>
+              <input type="text" id="Apellidos" name="Apellidos" class="form-control">
+              <label for="Apellidos">Correo Personal</label>
+              <input type="text" id="Correo" name="Apellidos" class="form-control">
+          </div>
+      </div>
+    </fieldset>
+      <fieldset>
+        <legend>Datos Domicilio</legend>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="Nombre">Estado </label>
+                <input type="text" id="Estado" name="Estado" class="form-control" required>
+                <label for="Nombre">Ciudad</label>
+                <input type="text" id="Ciudad" name="Ciudad" class="form-control" required>
+                <label for="Nombre">Codigo Postal</label>
+                <input type="number" id="CodigoPostal" name="CodigoPostal" class="form-control" required>
+            </div>
     
-    <div class="container">
-        <div class="d-flex justify-content-end mt-3">
-            <button class="btn btn-primary" routerLink="/add">Agregar</button>
+            <div class="form-group col-md-6">
+                <label for="Apellidos">Colonia</label>
+                <input type="text" id="Colonia" name="Colonia" class="form-control">
+                <label for="Apellidos">Calle</label>
+                <input type="text" id="Calle" name="Calle" class="form-control">
+            </div>
+        </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Datos Universitarios</legend>
+      <div class="form-row">
+          <div class="form-group col-md-6">
+              <label for="Nombre">Universidad</label>
+              <input type="text" id="Estado" name="Estado" class="form-control" required>
 
           </div>
-      <h2>Tabla de actividades</h2>
-      <br>
-      <div class="container" >
-        <table class="table table-striped">
-          <thead >
-            <tr >
-              <th>Actividad</th>
-              <th>Descripción</th>
-              <th>Encargado</th>
-              <th>Participantes</th>
-              <th>Estatus</th>
-              <th>Fecha de inicio</th>
-              <th>Fecha de fin</th>
-              <th></th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor ="let item of act">
-             <td >{{item.Nombre_Actividad}}</td>
-             <td>{{item.Descripcion}}</td>
-              <td>{{item.Encargado}}</td>
-              <td>{{item.Participante}}</td>
-              <td>{{item.Estatus}}</td>
-              <td>{{item.Fecha_de_inicio | date: 'yyyy-MM-dd'}}</td>
-              <td>{{item.Fecha_de_fin | date: 'yyyy-MM-dd'}}</td>
-              <td>
-                <a [routerLink]="['/edit', item.idActividad]" (click)="editact(item.idActividad)" type="button" class="btn btn-primary">Modificar</a>
-                 </td>
-                 <td><button class="btn btn-danger " (click)="cancelar(item.idActividad)">Cancelar</button></td>
 
-            </tr>
-            <!-- Agrega más filas según necesites -->
-          </tbody>
-        </table>
       </div>
+      <p>Periodo</p>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="Nombre">Fecha Inicio </label>
+            <input type="date" id="FechaI" name="FechaI" class="form-control" required>
+        </div>
+
+        <div class="form-group col-md-6">
+          <label for="Nombre">Fecha Final </label>
+          <input type="date" id="FechaF" name="FechaF" class="form-control" required>
+        </div>
+    </div>
+  </fieldset>
     
-      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    </div>
-    <div class="d-flex justify-content-end mt-3">
-      
-    </div>
-	</div>
+
+      <!-- Agregar más form-row y form-group según sea necesario -->
+
+      <!-- Botón de envío -->
+      <button type="submit" class="btn btn-primary">Guardar Curriculum</button>
+  </form>
+</div>
