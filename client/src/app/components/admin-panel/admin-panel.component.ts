@@ -1,38 +1,13 @@
-// admin-panel.component.ts
-import { Component, OnInit } from '@angular/core';
-
-interface Usuario {
-  nombre: string;
-  email: string;
-  estatus: string;
-}
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-admin-panel',
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './admin-panel.component.html',
-  styleUrls: ['./admin-panel.component.css']
+  styleUrl: './admin-panel.component.css'
 })
-export class AdminPanelComponent implements OnInit {
+export class AdminPanelComponent {
 
-  usuarios: Usuario[] = [
-    { nombre: 'Juan Pérez', email: 'juan@example.com', estatus: 'Activo' },
-    { nombre: 'María Gómez', email: 'maria@example.com', estatus: 'Inactivo' },
-    // Agrega más usuarios según sea necesario
-  ];
-
-  constructor() { }
-
-  ngOnInit(): void {
-    // Lógica de inicialización
-  }
-
-  validarUsuario(usuario: Usuario) {
-    // Lógica para validar usuario
-    console.log('Usuario validado:', usuario);
-  }
-
-  rechazarUsuario(usuario: Usuario) {
-    // Lógica para rechazar usuario
-    console.log('Usuario rechazado:', usuario);
-  }
 }
