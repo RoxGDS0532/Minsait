@@ -9,7 +9,7 @@ interface Usuario {
 @Component({
   selector: 'app-admin-panel',
   templateUrl: './admin-panel.component.html',
-  styleUrl: './admin-panel.component.css'
+  styleUrls: ['./admin-panel.component.css'] // Corrección en esta línea
 })
 
 export class AdminPanelComponent implements OnInit {
