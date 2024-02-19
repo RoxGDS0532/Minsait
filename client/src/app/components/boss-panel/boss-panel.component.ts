@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './boss-panel.component.html',
-  styleUrl: './boss-panel.component.css'
+  styleUrls: ['./boss-panel.component.css'] // Use 'styleUrls' instead of 'styleUrl'
 })
 export class BossPanelComponent {
 

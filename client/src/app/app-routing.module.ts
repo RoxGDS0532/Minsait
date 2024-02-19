@@ -8,6 +8,7 @@ import { LoginComponent } from './components/login/login.component';
 import { ResgisterComponent } from './components/resgister/resgister.component';
 import { UserComponent } from './components/user/user.component';
 import { EditUserComponent } from './components/edit-user/edit-user.component';
+import { BossPanelComponent } from './components/boss-panel/boss-panel.component';
 const routes: Routes = [
   {
     path : '',
@@ -35,8 +36,8 @@ const routes: Routes = [
     },
   {
   
-  path : 'hist-act',
-  component : HistActComponent
+  path : 'boss',
+  component : BossPanelComponent
   }
   ,
   {
