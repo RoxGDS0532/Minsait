@@ -80,11 +80,39 @@
         </div>
     </div>
   </fieldset>
-    
+  <fieldset>
+    <legend>Experiencia</legend>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="Nombre">Nombre</label>
+            <input type="text" id="Nombre" name="Nombre" class="form-control" required>
+            <label for="Nombre">Numero Telefonico</label>
+            <input type="text" id="Telefono" name="Telefono" class="form-control" required>
+            <label for="Nombre">Liceciatura o Ingenieria(Nivel)</label>
+            <input type="text" id="Liceciatura" name="Liceciatura" class="form-control" required>
+            <div class="form-group">
+              <label for="Apellidos">Descripcion Personal</label>
+              <textarea id="DescripcionP" name="DescripcionP" class="form-control" rows="4"></textarea>
+          </div>
+          
+        </div>
+        
 
-      <!-- Agregar más form-row y form-group según sea necesario -->
 
-      <!-- Botón de envío -->
+        <div class="form-group col-md-6">
+          <form action="/ruta/del/controlador" method="post" enctype="multipart/form-data">
+            <div class="mb-3">
+              <label for="archivoWord" class="form-label">Imagen</label>
+              <input type="file" class="form-control" id="archivoWord" name="archivoWord" accept=".doc, .docx">
+            </div>
+          </form>
+            <label for="Apellidos">Apellidos</label>
+            <input type="text" id="Apellidos" name="Apellidos" class="form-control">
+            <label for="Apellidos">Correo Personal</label>
+            <input type="text" id="Correo" name="Apellidos" class="form-control">
+        </div>
+    </div>
+  </fieldset>
       <button type="submit" class="btn btn-primary">Guardar Curriculum</button>
   </form>
 </div>

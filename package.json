@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+<<<<<<< HEAD
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "mongoose": "^8.1.2"
+=======
+    "@angular/common": "^17.2.1",
+    "@angular/core": "^17.2.1"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.12"
+>>>>>>> 6b20480cb7a26262809be007357dd0a11cbaa554
+  }
+}
