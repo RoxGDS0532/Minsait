@@ -18,6 +18,7 @@ import { ResgisterComponent } from './components/resgister/resgister.component';
 import { EditUserComponent } from './components/edit-user/edit-user.component';
 
 import { BossPanelComponent } from './components/boss-panel/boss-panel.component';
+import { AdminComponent } from './components/admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { BossPanelComponent } from './components/boss-panel/boss-panel.component
     UserComponent,
     ResgisterComponent,
     EditUserComponent,
-    BossPanelComponent
+    BossPanelComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
