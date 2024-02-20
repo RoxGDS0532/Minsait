@@ -1,17 +1,120 @@
 <div>
-    <div class="header-blue">
-        <nav class="navbar navbar-dark navbar-expand-md navigation-clean-search">
-            <div class="container"><a class="navbar-brand" href="#">Minsait</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
-                <div class="collapse navbar-collapse"
-                    id="navcol-1">
-                    
-                    <form class="form-inline mr-auto" target="_self">
-                        <div class="form-group"><label for="search-field"><i class="fa fa-search"></i></label><input class="form-control search-field" type="search" name="search" id="search-field"></div>
-                    </form><span class="navbar-text"> <a routerLink="/login"class="login">Usuario</a></span></div>
-            </div>
-        </nav>
+  <div class="header-blue">
+      <nav class="navbar navbar-dark navbar-expand-md navigation-clean-search">
+          <div class="container"><a class="navbar-brand" href="#">Minsait</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+              <div class="collapse navbar-collapse"
+                  id="navcol-1">
+                  
+                  <form class="form-inline mr-auto" target="_self">
+                      <div class="form-group"><label for="search-field"><i class="fa fa-search"></i></label><input class="form-control search-field" type="search" name="search" id="search-field"></div>
+                  </form><span class="navbar-text"> <a routerLink="/login"class="login">Boss</a></span></div>
+          </div>
+      </nav>
+</div>
+
+<div class="container pt-3"> <!--quita este si no te gusta centrado-->
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nombre Postulante</th>
+        <th scope="col">Perfil del Postulante</th>
+        <th scope="col">CV del Postulante</th>
+        <th scope="col">Comentarios</th>
+        <th scope="col">Estatus</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let postulante of postulantes; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>{{ postulante.nombre }}</td>
+        <td>{{ postulante.perfil }}</td>
+        <td>
+          {{ postulante.cv }}<a [href]="postulante.cv" target="_blank" class="btn btn-primary ml-2">Ver</a>
+        </td>
+        <td><input type="text" class="form-control"></td>
+        <td>
+          <button class="btn btn-success me-2" (click)="aceptarPostulante()">Aceptado</button>
+          <button class="btn btn-danger" (click)="rechazarPostulante(i)">Rechazado</button>
+        </td>
+      </tr>
+    
+      <!--estaticos-->
+      <!--
+      <tr>
+        <td>1</td>
+        <td>Roxana</td>
+        <td>Desarrollador</td>
+        <td>
+          CV.pdf <a href="" target="_blank" class="btn btn-primary">Ver</a>
+        </td>
+        <td><input type="text" class="form-control"></td>
+        <td>
+          <button class="btn btn-success me-2" (click)="aceptarPostulante()">Aceptado</button>
+          <button class="btn btn-danger" (click)="rechazarPostulante()">Rechazado</button>
+        </td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>laura</td>
+        <td>Desarrollador</td>
+        <td>
+          Mi CV.pdf <a href="" target="_blank" class="btn btn-primary">Ver</a>
+        </td>
+        <td><input type="text" class="form-control"></td>
+        <td>
+          <button class="btn btn-success me-2">Aceptado</button>
+          <button class="btn btn-danger">Rechazado</button>
+        </td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>mane</td>
+        <td>Desarrollador</td>
+        <td>
+          CV.pdf <a href="" target="_blank" class="btn btn-primary">Ver</a>
+        </td>
+        <td><input type="text" class="form-control"></td>
+        <td>
+          <button class="btn btn-success me-2">Aceptado</button>
+          <button class="btn btn-danger">Rechazado</button>
+        </td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>brayan</td>
+        <td>Desarrollador</td>
+        <td>
+          CV.pdf <a href="" target="_blank" class="btn btn-primary">Ver</a>
+        </td>
+        <td><input type="text" class="form-control"></td>
+        <td>
+          <button class="btn btn-success me-2">Aceptado</button>
+          <button class="btn btn-danger">Rechazado</button>
+        </td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>angel</td>
+        <td>Desarrollador</td>
+        <td>
+          CV.pdf <a href="" target="_blank" class="btn btn-primary">Ver</a>
+        </td>
+        <td><input type="text" class="form-control"></td>
+        <td>
+          <button class="btn btn-success me-2">Aceptado</button>
+          <button class="btn btn-danger">Rechazado</button>
+        </td>
+      </tr>
+      -->
+    </tbody>
+  </table>
   </div>
-  
+</div>
+
+
+
+  <!--
   <div class="container text-center">
       <div class="row align-items-center bg-dark text-white">
         <div class="col border p-3">
@@ -74,7 +177,7 @@
               428 170 1228
           </div>
           <div class="col border p-3 h-100">
-            <p class="m-0">mi cv.pdf <a href="" target="_blank" class="btn btn-primary"> Ver</a></p>
+            <p class="m-0">mi cv.pdf </p>
           </div>
           <div class="col border p-3 h-100">
             <select class="form-select">
@@ -86,3 +189,4 @@
           </div>
         </div>
     </div>
+    -->
