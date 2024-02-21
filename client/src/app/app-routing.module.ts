@@ -9,7 +9,6 @@ import { ResgisterComponent } from './components/resgister/resgister.component';
 import { UserComponent } from './components/user/user.component';
 import { EditUserComponent } from './components/edit-user/edit-user.component';
 import { BossPanelComponent } from './components/boss-panel/boss-panel.component';
-import { CurriculumComponent } from './components/curriculum/curriculum.component';
 const routes: Routes = [
   {
     path : '',
@@ -59,16 +58,11 @@ const routes: Routes = [
     
     },
     {
+    
       path : 'edituser/:id',
       component : EditUserComponent
       
-      },
-      {
-    
-        path : 'cv',
-        component : CurriculumComponent
-        
-        }
+      }
   ];
 
 @NgModule({

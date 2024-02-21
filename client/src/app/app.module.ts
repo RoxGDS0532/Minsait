@@ -18,7 +18,6 @@ import { ResgisterComponent } from './components/resgister/resgister.component';
 import { EditUserComponent } from './components/edit-user/edit-user.component';
 
 import { BossPanelComponent } from './components/boss-panel/boss-panel.component';
-import { CurriculumComponent } from './components/curriculum/curriculum.component';
 
 @NgModule({
   declarations: [
@@ -32,8 +31,7 @@ import { CurriculumComponent } from './components/curriculum/curriculum.componen
     UserComponent,
     ResgisterComponent,
     EditUserComponent,
-    BossPanelComponent,
-    CurriculumComponent
+    BossPanelComponent
   ],
   imports: [
     BrowserModule,
