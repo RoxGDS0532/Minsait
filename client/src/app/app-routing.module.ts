@@ -9,8 +9,6 @@ import { ResgisterComponent } from './components/resgister/resgister.component';
 import { UserComponent } from './components/user/user.component';
 import { EditUserComponent } from './components/edit-user/edit-user.component';
 import { BossPanelComponent } from './components/boss-panel/boss-panel.component';
-import { AdminPanelComponent } from './components/admin-panel/admin-panel.component';
-import { AdminComponent } from './components/admin/admin.component';
 const routes: Routes = [
   {
     path : '',
@@ -33,8 +31,8 @@ const routes: Routes = [
   },
   {
   
-    path : 'Admin',
-    component : AdminComponent
+    path : 'edit/:id',
+    component : AddActComponent
     },
   {
   
