@@ -19,9 +19,8 @@
         <th scope="col">#</th>
         <th scope="col">Nombre Postulante</th>
         <th scope="col">Perfil del Postulante</th>
-        <th scope="col">CV del Postulante</th>
         <th scope="col">Comentarios</th>
-        <th scope="col">Estatus</th>
+        <th>Ver cv del postulante</th>
       </tr>
     </thead>
     <tbody>
@@ -29,14 +28,9 @@
         <td>{{ i + 1 }}</td>
         <td>{{ postulante.nombre }}</td>
         <td>{{ postulante.perfil }}</td>
-        <td>
-          {{ postulante.cv }}<a [href]="postulante.cv" target="_blank" class="btn btn-primary ml-2">Ver</a>
-        </td>
+        
         <td><input type="text" class="form-control"></td>
-        <td>
-          <button class="btn btn-success me-2" (click)="aceptarPostulante()">Aceptado</button>
-          <button class="btn btn-danger" (click)="rechazarPostulante(i)">Rechazado</button>
-        </td>
+        <td><button class="btn btn-success me-2" routerLink="/cv">Ver</button></td> 
       </tr>
     
       <!--estaticos-->

@@ -10,6 +10,7 @@ import { UserComponent } from './components/user/user.component';
 import { EditUserComponent } from './components/edit-user/edit-user.component';
 import { BossPanelComponent } from './components/boss-panel/boss-panel.component';
 import { CurriculumComponent } from './components/curriculum/curriculum.component';
+import { CandidatoComponent } from './components/candidato/candidato.component';
 const routes: Routes = [
   {
     path : '',
@@ -18,6 +19,10 @@ const routes: Routes = [
   },
   {
     path : 'home',
+    component : GameListComponent
+  },
+  {
+    path : 'candidat',
     component : GameListComponent
   },
   {
