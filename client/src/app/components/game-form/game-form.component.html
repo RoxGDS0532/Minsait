@@ -1,4 +1,3 @@
-
 <div class="component-container">
   <app-navigation></app-navigation>
   <div class="container mt-5">
@@ -60,61 +59,69 @@
               <label for="DescripcionP">Descripción Personal</label>
               <textarea id="DescripcionP" name="DescripcionP" class="form-control" rows="4"></textarea>
             </div>
+            <div class="form-group col-md-6">
+              <form action="/ruta/del/controlador" method="post" enctype="multipart/form-data">
+                <div class="mb-3">
+                  <label for="archivoWord" class="form-label">Imagen</label>
+                  <input type="file" class="form-control" id="archivoWord" name="archivoWord" accept=".doc, .docx">
+                </div>
+              </form>
+            </div>
+          </div>
+          
+        </div>
+      </fieldset>
+      
+<legend></legend>
+<legend></legend>
+<legend></legend>
+<legend></legend>
+<legend></legend>
+
+      <legend>Datos Domicilio</legend>
+      <fieldset class="rectangulo mb-4"> <!-- Agregado margen inferior -->
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="Nombre">Estado </label>
+            <input type="text" id="Estado" name="Estado" class="form-control" required>
+            <label for="Nombre">Ciudad</label>
+            <input type="text" id="Ciudad" name="Ciudad" class="form-control" required>
+            <label for="Nombre">Codigo Postal</label>
+            <input type="number" id="CodigoPostal" name="CodigoPostal" class="form-control" required>
+          </div>
+      
+          <div class="form-group col-md-6">
+            <label for="Apellidos">Colonia</label>
+            <input type="text" id="Colonia" name="Colonia" class="form-control">
+            <label for="Apellidos">Calle</label>
+            <input type="text" id="Calle" name="Calle" class="form-control">
           </div>
         </div>
       </fieldset>
       
-      
-      
-    
-    
-    
-    
-    <fieldset>
-      <legend>Datos Domicilio</legend>
-      <div class="form-row">
-        <div class="form-group col-md-6">
-          <label for="Nombre">Estado </label>
-          <input type="text" id="Estado" name="Estado" class="form-control" required>
-          <label for="Nombre">Ciudad</label>
-          <input type="text" id="Ciudad" name="Ciudad" class="form-control" required>
-          <label for="Nombre">Codigo Postal</label>
-          <input type="number" id="CodigoPostal" name="CodigoPostal" class="form-control" required>
-        </div>
-
-        <div class="form-group col-md-6">
-          <label for="Apellidos">Colonia</label>
-          <input type="text" id="Colonia" name="Colonia" class="form-control">
-          <label for="Apellidos">Calle</label>
-          <input type="text" id="Calle" name="Calle" class="form-control">
-        </div>
-      </div>
-    </fieldset>
-
-    <fieldset>
       <legend>Datos Universitarios</legend>
-      <div class="form-row">
-        <div class="form-group col-md-6">
-          <label for="Nombre">Universidad</label>
-          <input type="text" id="Estado" name="Estado" class="form-control" required>
-          <label for="Carrera">Carrera</label>
-          <input type="text" id="Estado" name="Estado" class="form-control" required>
+      <fieldset class="rectangulo mb-6"> <!-- Agregado margen inferior -->
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="Universidad">Universidad</label>
+            <input type="text" id="Universidad" name="Universidad" class="form-control" required>
+            <label for="Carrera">Carrera</label>
+            <input type="text" id="Carrera" name="Carrera" class="form-control" required>
+          </div>
         </div>
-
-      </div>
-      <p>Periodo</p>
-      <div class="form-row">
-        <div class="form-group col-md-6">
-          <label for="Nombre">Fecha Inicio </label>
-          <input type="date" id="FechaI" name="FechaI" class="form-control" required>
+        <p>Periodo</p>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="FechaI">Fecha Inicio</label>
+            <input type="date" id="FechaI" name="FechaI" class="form-control" required>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="FechaF">Fecha Final</label>
+            <input type="date" id="FechaF" name="FechaF" class="form-control" required>
+          </div>
         </div>
-
-        <div class="form-group col-md-6">
-          <label for="Nombre">Fecha Final </label>
-          <input type="date" id="FechaF" name="FechaF" class="form-control" required>
-        </div>
-      </div>
-    </fieldset>
+      </fieldset>
+      
 
 
 
