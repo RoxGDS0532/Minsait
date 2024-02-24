@@ -1,44 +1,75 @@
-<app-navigation></app-navigation>
-<div class="container mt-5">
-  <h2 class="mb-4">Formulario Curriculum</h2>
-  <form action="guardar_curriculum.php" method="post" enctype="multipart/form-data">
 
-    <fieldset>
-      <legend>Datos Personales</legend>
-      <div class="form-row">
-        <div class="form-group col-md-6">
-          <label for="Nombre">Nombre</label>
-          <input type="text" id="Nombre" name="Nombre" class="form-control" required>
-          <label for="Nombre">Numero Telefonico</label>
-          <input type="text" id="Telefono" name="Telefono" class="form-control" required>
-          <label for="Nombre">Liceciatura o Ingenieria(Nivel)</label>
-          <input type="text" id="Liceciatura" name="Liceciatura" class="form-control" required>
-          <div class="form-group">
-            <label for="Apellidos">Descripcion Personal</label>
-            <textarea id="DescripcionP" name="DescripcionP" class="form-control" rows="4"></textarea>
-          </div>
-
-        </div>
-
-
-
-        <div class="form-group col-md-6">
-          <form action="/ruta/del/controlador" method="post" enctype="multipart/form-data">
-            <div class="mb-3">
-              <label for="archivoWord" class="form-label">Imagen</label>
-              <input type="file" class="form-control" id="archivoWord" name="archivoWord" accept=".doc, .docx">
+<div class="component-container">
+  <app-navigation></app-navigation>
+  <div class="container mt-5">
+    <h2 class="mb-4">Formulario Curriculum</h2>
+    <form action="guardar_curriculum.php" method="post" enctype="multipart/form-data">
+      
+      <fieldset>
+        <legend>Datos Personales</legend>
+        <div class="datos-personales-container border p-3">
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="Nombre">Nombre</label>
+              <input type="text" id="Nombre" name="Nombre" class="form-control" required>
             </div>
-          </form>
-          <label for="Apellidos">Apellidos</label>
-          <input type="text" id="Apellidos" name="Apellidos" class="form-control">
-          <label for="Apellidos">Correo Personal</label>
-          <input type="text" id="Correo" name="Apellidos" class="form-control">
-          <label for="Edad">Edad</label>
-          <input type="number" id="EdadU" name="EdadU" class="form-control" required min="0" max="150" step="1">
-
+            <div class="form-group col-md-6">
+              <label for="ApP">Apellido Paterno</label>
+              <input type="text" id="ApP" name="ApP" class="form-control" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="ApM">Apellido Materno</label>
+              <input type="text" id="ApM" name="ApM" class="form-control" required>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="EdadU">Edad</label>
+              <input type="number" id="EdadU" name="EdadU" class="form-control" required min="0" max="150" step="1">
+            </div>
+          </div>
+          <!-- Primer campo de teléfono -->
+          <div class="form-row">
+            <div class="form-group col-md-6 d-flex align-items-end">
+              <label for="Telefono1" class="mr-2">Número Telefónico</label>
+              <input type="text" [(ngModel)]="telefonos[0].valor" name="Telefono1" class="form-control tel-input">
+              <button *ngIf="telefonos.length < 3" class="btn btn-outline-secondary ml-2" type="button" (click)="agregarTelefono()"><i class="bi bi-plus-lg text-success"></i></button>
+            </div>
+          </div>
+          <!-- Campos adicionales de teléfono -->
+          <div *ngFor="let telefono of telefonos.slice(1); let i = index" class="form-row">
+            <div class="form-group col-md-6 d-flex align-items-end">
+              <label for="Telefono{{i+2}}" class="mr-2">Número Telefónico</label>
+              <input type="text" [(ngModel)]="telefono.valor" name="Telefono{{i+2}}" class="form-control tel-input">
+              <button class="btn btn-outline-secondary ml-2" type="button" (click)="eliminarTelefono(i+1)"><i class="bi bi-dash-lg text-danger"></i></button>
+            </div>
+          </div>
+          <!-- Otros campos de datos personales -->
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="Liceciatura">Licenciatura</label>
+              <input type="text" id="Liceciatura" name="Liceciatura" class="form-control" required>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="Correo">Correo Personal</label>
+              <input type="text" id="Correo" name="Correo" class="form-control">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="DescripcionP">Descripción Personal</label>
+              <textarea id="DescripcionP" name="DescripcionP" class="form-control" rows="4"></textarea>
+            </div>
+          </div>
         </div>
-      </div>
-    </fieldset>
+      </fieldset>
+      
+      
+      
+    
+    
+    
+    
     <fieldset>
       <legend>Datos Domicilio</legend>
       <div class="form-row">
