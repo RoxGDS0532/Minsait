@@ -18,10 +18,11 @@ export class GameFormComponent implements OnInit{
     nombre : '',
     correo: '',
     contrasena : '' ,
-    telefono : undefined,
+    telefono: undefined,
     nombreRol  : ''
   }
- 
+  telefonos: any[] = [{ valor: '' }];
+
   constructor(private gameService: GamesService, private authService: AuthService,private router: Router){}
   ngOnInit(): void {
   
@@ -69,10 +70,18 @@ cancelar(id: string ) {
   }
 }
 
-
-
 editact(id:string){
   console.log(id);
 }
-  
+agregarTelefono() {
+  if (this.telefonos.length < 3) {
+    this.telefonos.splice(1, 0, { valor: '' }); // Inserta el nuevo teléfono en la segunda posición
+  }
+}
+
+eliminarTelefono(index: number) {
+  if (this.telefonos.length > 1) {
+    this.telefonos.splice(index, 1); // Elimina el teléfono en la posición indicada por index
+  }
+}
 }
