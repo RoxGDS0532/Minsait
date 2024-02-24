@@ -99,28 +99,38 @@
         </div>
       </fieldset>
       
-      <legend>Datos Universitarios</legend>
-      <fieldset class="rectangulo mb-6"> <!-- Agregado margen inferior -->
-        <div class="form-row">
-          <div class="form-group col-md-6">
-            <label for="Universidad">Universidad</label>
-            <input type="text" id="Universidad" name="Universidad" class="form-control" required>
-            <label for="Carrera">Carrera</label>
-            <input type="text" id="Carrera" name="Carrera" class="form-control" required>
-          </div>
-        </div>
-        <p>Periodo</p>
-        <div class="form-row">
-          <div class="form-group col-md-6">
-            <label for="FechaI">Fecha Inicio</label>
-            <input type="date" id="FechaI" name="FechaI" class="form-control" required>
-          </div>
-          <div class="form-group col-md-6">
-            <label for="FechaF">Fecha Final</label>
-            <input type="date" id="FechaF" name="FechaF" class="form-control" required>
-          </div>
-        </div>
-      </fieldset>
+
+      
+<!-- Mostrar el formulario base -->
+<fieldset *ngFor="let estudio of estudios; let i = index" class="rectangulo mb-8">
+  <legend>Datos Universitarios</legend>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="Universidad{{i}}">Universidad</label>
+      <input type="text" id="Universidad{{i}}" name="Universidad{{i}}" class="form-control" required [(ngModel)]="estudios[i].universidad">
+      <label for="Carrera{{i}}">Carrera</label>
+      <input type="text" id="Carrera{{i}}" name="Carrera{{i}}" class="form-control" required [(ngModel)]="estudios[i].carrera">
+    </div>
+  </div>
+  <p>Periodo</p>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="FechaI{{i}}">Fecha Inicio</label>
+      <input type="date" id="FechaI{{i}}" name="FechaI{{i}}" class="form-control" required [(ngModel)]="estudios[i].fechaInicio">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="FechaF{{i}}">Fecha Final</label>
+      <input type="date" id="FechaF{{i}}" name="FechaF{{i}}" class="form-control" required [(ngModel)]="estudios[i].fechaFinal">
+    </div>
+  </div>
+  <!-- Botón para eliminar este formulario de estudio -->
+  <button type="button" class="btn btn-danger" (click)="eliminarEstudio(i)">Eliminar Estudio</button>
+</fieldset>
+
+<!-- Permitir agregar más formularios -->
+<button type="button" class="btn btn-primary mt-3" (click)="agregarEstudio()">Agregar otro estudio</button>
+
+      
       
 
 
