@@ -4,6 +4,7 @@ import {GamesService} from '../../services/games.service';
 import { Usuarios } from 'src/app/interfaces/usuarios'
 import { AuthService } from 'src/app/services/auth.service';
 import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-game-form',
   templateUrl: './game-form.component.html',
@@ -22,6 +23,8 @@ export class GameFormComponent implements OnInit{
     nombreRol  : ''
   }
   telefonos: any[] = [{ valor: '' }];
+  estudios: any[] = [{ universidad: '', carrera: '', fechaInicio: '', fechaFinal: '' }];
+
 
   constructor(private gameService: GamesService, private authService: AuthService,private router: Router){}
   ngOnInit(): void {
@@ -82,6 +85,18 @@ agregarTelefono() {
 eliminarTelefono(index: number) {
   if (this.telefonos.length > 1) {
     this.telefonos.splice(index, 1); // Elimina el teléfono en la posición indicada por index
+  }
+}
+
+agregarEstudio() {
+  if (this.estudios.length < 3) {
+    this.estudios.push({ universidad: '', carrera: '', fechaInicio: '', fechaFinal: '' });
+  }
+}
+
+eliminarEstudio(index: number) {
+  if (this.estudios.length > 1) {
+    this.estudios.splice(index, 1);
   }
 }
 }
