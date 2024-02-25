@@ -10,7 +10,12 @@ import { UserComponent } from './components/user/user.component';
 import { EditUserComponent } from './components/edit-user/edit-user.component';
 import { BossPanelComponent } from './components/boss-panel/boss-panel.component';
 import { CurriculumComponent } from './components/curriculum/curriculum.component';
+<<<<<<< Updated upstream
 import { CandidatoComponent } from './components/candidato/candidato.component';
+=======
+import { AdminPanelComponent } from './components/admin-panel/admin-panel.component';
+import { AdminComponent } from './components/admin/admin.component';
+>>>>>>> Stashed changes
 const routes: Routes = [
   {
     path : '',
@@ -37,8 +42,8 @@ const routes: Routes = [
   },
   {
   
-    path : 'edit/:id',
-    component : AddActComponent
+    path : 'Admin',
+    component : AdminComponent
     },
   {
   
