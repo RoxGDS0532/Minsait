@@ -1,0 +1,173 @@
+
+<div class="component-container">
+  <app-navigation></app-navigation>
+  <div class="container mt-5">
+    <h2 class="mb-4">Formulario Curriculum</h2>
+    <form action="guardar_curriculum.php" method="post" enctype="multipart/form-data">
+      
+      <fieldset>
+        <legend>Datos Personales</legend>
+        <div class="datos-personales-container border p-3">
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="Nombre">Nombre</label>
+              <input type="text" id="Nombre" name="Nombre" class="form-control" required>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="ApP">Apellido Paterno</label>
+              <input type="text" id="ApP" name="ApP" class="form-control" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="ApM">Apellido Materno</label>
+              <input type="text" id="ApM" name="ApM" class="form-control" required>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="EdadU">Edad</label>
+              <input type="number" id="EdadU" name="EdadU" class="form-control" required min="0" max="150" step="1">
+            </div>
+          </div>
+          <!-- Primer campo de teléfono -->
+          <div class="form-row">
+            <div class="form-group col-md-6 d-flex align-items-end">
+              <label for="Telefono1" class="mr-2">Número Telefónico</label>
+              <input type="text" [(ngModel)]="telefonos[0].valor" name="Telefono1" class="form-control tel-input">
+              <button *ngIf="telefonos.length < 3" class="btn btn-outline-secondary ml-2" type="button" (click)="agregarTelefono()"><i class="bi bi-plus-lg text-success"></i></button>
+            </div>
+          </div>
+          <!-- Campos adicionales de teléfono -->
+          <div *ngFor="let telefono of telefonos.slice(1); let i = index" class="form-row">
+            <div class="form-group col-md-6 d-flex align-items-end">
+              <label for="Telefono{{i+2}}" class="mr-2">Número Telefónico</label>
+              <input type="text" [(ngModel)]="telefono.valor" name="Telefono{{i+2}}" class="form-control tel-input">
+              <button class="btn btn-outline-secondary ml-2" type="button" (click)="eliminarTelefono(i+1)"><i class="bi bi-dash-lg text-danger"></i></button>
+            </div>
+          </div>
+          <!-- Otros campos de datos personales -->
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="Liceciatura">Licenciatura</label>
+              <input type="text" id="Liceciatura" name="Liceciatura" class="form-control" required>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="Correo">Correo Personal</label>
+              <input type="text" id="Correo" name="Correo" class="form-control">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="DescripcionP">Descripción Personal</label>
+              <textarea id="DescripcionP" name="DescripcionP" class="form-control" rows="4"></textarea>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+      
+      
+      
+    
+    
+    
+    
+    <fieldset>
+      <legend>Datos Domicilio</legend>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="Nombre">Estado </label>
+          <input type="text" id="Estado" name="Estado" class="form-control" required>
+          <label for="Nombre">Ciudad</label>
+          <input type="text" id="Ciudad" name="Ciudad" class="form-control" required>
+          <label for="Nombre">Codigo Postal</label>
+          <input type="number" id="CodigoPostal" name="CodigoPostal" class="form-control" required>
+        </div>
+
+        <div class="form-group col-md-6">
+          <label for="Apellidos">Colonia</label>
+          <input type="text" id="Colonia" name="Colonia" class="form-control">
+          <label for="Apellidos">Calle</label>
+          <input type="text" id="Calle" name="Calle" class="form-control">
+        </div>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Datos Universitarios</legend>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="Nombre">Universidad</label>
+          <input type="text" id="Estado" name="Estado" class="form-control" required>
+          <label for="Carrera">Carrera</label>
+          <input type="text" id="Estado" name="Estado" class="form-control" required>
+        </div>
+
+      </div>
+      <p>Periodo</p>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="Nombre">Fecha Inicio </label>
+          <input type="date" id="FechaI" name="FechaI" class="form-control" required>
+        </div>
+
+        <div class="form-group col-md-6">
+          <label for="Nombre">Fecha Final </label>
+          <input type="date" id="FechaF" name="FechaF" class="form-control" required>
+        </div>
+      </div>
+    </fieldset>
+
+
+
+    <fieldset>
+      <legend>Experiencia</legend>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="Certificados">Certificados</label>
+          <textarea id="DescripcionC" name="DescripcionC" class="form-control" rows="4"></textarea>
+          <label for="HabilidadesL">Habilidades laborales</label>
+          <input type="text" id="HabilidadesLab" name="HabilidadesLab" class="form-control" required>
+          <label for="ConocimientosT">Conocimientos tecnicos</label>
+          <input type="text" id="ConocimientosTec" name="ConocimientosTec" class="form-control" required>
+
+        </div>
+
+        <fieldset>
+          <legend>Referencias laborales anteriores</legend>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="EmpresaE">Empresa anterior</label>
+              <input type="text" id="EmpresaAnt" name="EmpresaAnt" class="form-control" required>
+              <label for="PuestoE">Puesto anterior</label>
+              <input type="text" id="EmpresaExp" name="EmpresaExp" class="form-control" required>
+              <label for="ExperienciaLab">Experiencias laborales</label>
+              <textarea id="EmpresaExp" name="EmpresaExp" class="form-control" required></textarea>
+            </div>
+
+
+            <div class="form-group col-md-6">
+              <label for="FechaEI">Fecha de experiencia de inicio </label>
+              <input type="date" id="FechaExpI" name="FechaExpI" class="form-control" required>
+            </div>
+
+            <div class="form-group col-md-6">
+              <label for="FechaEF">Fecha de experiencia final </label>
+              <input type="date" id="FechaExpF" name="FechaExpF" class="form-control" required>
+            </div>
+          </div>
+        </fieldset>
+
+
+
+
+        <div class="form-group col-md-6">
+          <form action="/ruta/del/controlador" method="post" enctype="multipart/form-data">
+            <div class="mb-3">
+            </div>
+          </form>
+
+        </div>
+      </div>
+    </fieldset>
+    <button type="submit" class="btn btn-primary">Guardar Curriculum</button>
+  </form>
+</div>
