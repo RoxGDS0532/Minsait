@@ -11,6 +11,7 @@ import { HistActComponent } from './components/hist-act/hist-act.component';
 import {GamesService} from './services/games.service';
 import { PromocionesComponent } from './components/promociones/promociones.component';
 import { AutosComponent } from './components/autos/autos.component';
+import { DetallesAutoComponent } from './components/detalles-auto/detalles-auto.component';
 
 
 
@@ -22,6 +23,7 @@ import { AutosComponent } from './components/autos/autos.component';
     HistActComponent,
     PromocionesComponent,
     AutosComponent,
+    DetallesAutoComponent,
   ],
   imports: [
     BrowserModule,
