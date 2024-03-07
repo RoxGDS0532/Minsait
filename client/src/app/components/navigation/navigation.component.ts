@@ -3,7 +3,7 @@ import { Activities } from 'src/app/interfaces/actividades';
 import {GamesService} from '../../services/games.service';
 import { AuthService } from 'src/app/services/auth.service';
 import { Usuarios } from 'src/app/interfaces/usuarios';
-
+import { AutosComponent } from '../autos/autos.component';
 @Component({
   selector: 'app-navigation',
   templateUrl: './navigation.component.html',
