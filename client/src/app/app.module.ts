@@ -12,6 +12,7 @@ import {GamesService} from './services/games.service';
 import { PromocionesComponent } from './components/promociones/promociones.component';
 import { AutosComponent } from './components/autos/autos.component';
 import { DetallesAutoComponent } from './components/detalles-auto/detalles-auto.component';
+import { ReservaComponent } from './components/reserva/reserva.component';
 
 
 
@@ -24,6 +25,7 @@ import { DetallesAutoComponent } from './components/detalles-auto/detalles-auto.
     PromocionesComponent,
     AutosComponent,
     DetallesAutoComponent,
+    ReservaComponent,
   ],
   imports: [
     BrowserModule,
