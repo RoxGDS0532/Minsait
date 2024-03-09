@@ -1,0 +1,56 @@
+<app-admin-navi></app-admin-navi>
+
+<div class="container-fluid mt-5" style="font-family: 'Roboto', sans-serif;">
+  <div class="card shadow-lg rounded-lg" style="max-width: 800px; margin: 0 auto;">
+    <h3 class="card-header text-center" style="background-color: #007bff; color: #ffffff; border-radius: 0.75rem 0.75rem 0 0;">Agregar nuevo auto</h3>
+    <div class="card-body">
+      <form>
+        <div class="mb-3">
+          <label for="imagen" class="form-label">Imagen del auto</label>
+          <input type="file" class="form-control" id="imagen">
+        </div>
+        <div class="mb-3">
+          <label for="marca" class="form-label">Marca</label>
+          <input type="text" class="form-control" id="marca" placeholder="Ingrese la marca del auto">
+        </div>
+        <div class="mb-3">
+          <label for="modelo" class="form-label">Modelo</label>
+          <input type="text" class="form-control" id="modelo" placeholder="Ingrese el modelo del auto">
+        </div>
+        <div class="mb-3">
+          <label for="placas" class="form-label">Placas</label>
+          <input type="text" class="form-control" id="placas" placeholder="Ingrese las placas del auto">
+        </div>
+        <div class="mb-3">
+          <label for="asientos" class="form-label">Asientos</label>
+          <input type="number" class="form-control" id="asientos" placeholder="Ingrese la cantidad de asientos">
+        </div>
+        <div class="mb-3">
+          <label for="maletas" class="form-label">Maletas</label>
+          <input type="number" class="form-control" id="maletas" placeholder="Ingrese la cantidad de maletas">
+        </div>
+        <div class="mb-3">
+          <label for="tipoCaja" class="form-label">Tipo de Caja</label>
+          <select class="form-select" id="tipoCaja">
+            <option value=""></option>
+            <option value="automatica">Automática</option>
+            <option value="manual">Manual</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label for="tipoVehiculo" class="form-label">Tipo de Vehículo</label>
+          <select class="form-select" id="tipoVehiculo">
+            <option value=""></option>
+            <option value="sedan">Sedán</option>
+            <option value="suv">SUV</option>
+            <option value="camioneta">Camioneta</option>
+          </select>
+        </div>
+        <div class="text-center">
+          <!--aqui lo regreso a la de lista y ya en el back le hacen que aparezca para verlo-->
+          <button type="submit" class="btn btn-primary" routerLink="/admin-autos">Agregar Auto</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

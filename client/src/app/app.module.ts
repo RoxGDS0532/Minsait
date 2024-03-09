@@ -12,6 +12,11 @@ import {GamesService} from './services/games.service';
 import { PromocionesComponent } from './components/promociones/promociones.component';
 import { AutosComponent } from './components/autos/autos.component';
 import { DetallesAutoComponent } from './components/detalles-auto/detalles-auto.component';
+import { AdminComponent } from './components/admin/admin.component';
+import { AdminNaviComponent } from './components/admin-navi/admin-navi.component';
+import { AdminAutosComponent } from './components/admin-autos/admin-autos.component';
+import { AdminAutosAgregarComponent } from './components/admin-autos-agregar/admin-autos-agregar.component';
+import { AdminReservasComponent } from './components/admin-reservas/admin-reservas.component';
 
 
 
@@ -24,6 +29,11 @@ import { DetallesAutoComponent } from './components/detalles-auto/detalles-auto.
     PromocionesComponent,
     AutosComponent,
     DetallesAutoComponent,
+    AdminComponent,
+    AdminNaviComponent,
+    AdminAutosComponent,
+    AdminAutosAgregarComponent,
+    AdminReservasComponent,
   ],
   imports: [
     BrowserModule,
