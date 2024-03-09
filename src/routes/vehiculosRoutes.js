@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { error } = require('console');
+
 const mongojs = require('mongojs');
 const db = mongojs('RentaAutos', ['Vehiculo']);
 const { ObjectId } = require('mongojs'); 
