@@ -260,8 +260,8 @@
     "zone.js": "^0.14.4"
   },
   "scripts": {
-    "start":"node src/index.js",
-    "dev": "nodemon src/index.js"
+    "start":"node Server/src/index.js",
+    "dev": "nodemon Server/src/index.js"
   },
   "keywords": [],
   "author": "",
