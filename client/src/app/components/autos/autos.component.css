@@ -78,16 +78,20 @@ img {
     background-color: #0056b3;
   }
   
-  .btn-detalles {
-    background-color: red;
-    color: #fff;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .btn-detalles:hover {
-    background-color: red;
-  }
-  
+.btn-group {
+  margin-top: 10px; /* Espacio entre los botones y el resto de la información */
+}
+
+.btn-detalles {
+  background-color: #dc3545; /* Color rojo */
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 10px; /* Separación entre botones */
+}
+
+.btn-detalles:hover {
+  background-color: #c82333; /* Color rojo más oscuro en hover */
+}
